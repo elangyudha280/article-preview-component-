@@ -33,6 +33,7 @@
   grid-auto-rows: auto;
   border-radius: 0.8em;
   overflow: hidden;
+  font-family: var(--font);
   background: #fff;
 }
 
@@ -46,6 +47,107 @@
 .container .card-header img {
   width: 100%;
   height: 100%;
+  user-select: none;
   object-fit: cover;
   object-position: center left;
+}
+
+.container .card-body {
+  padding: 2em 2em;
+}
+
+.card-body .title-card-body {
+  color: var(--VeryDarkGrayishBlue);
+  margin-bottom: 0.7em;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.card-body .desc-card-body {
+  font-size: 0.8em;
+  margin-bottom: 1.2em;
+  color: var(--DesaturatedDarkBlue);
+}
+
+.card-body .card-body-footer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.2fr 1.5fr 0.2fr;
+  grid-auto-rows: 35px;
+}
+
+.card-body-footer .card-footer-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card-footer-img img {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  object-fit: cover;
+  object-position: center;
+}
+.card-body-footer .card-footer-desc {
+  width: 100%;
+  height: 100%;
+  padding: 0.2px 0.5em;
+}
+.card-footer-desc p {
+  font-size: 0.8em;
+  color: var(--VeryDarkGrayishBlue);
+  font-weight: 700;
+  margin-bottom: -0.5em;
+}
+.card-footer-desc .date {
+  color: var(--GrayishBlue);
+  font-size: 0.7em;
+  font-weight: 700;
+}
+.card-footer-share {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background: var(--LightGrayishBlue);
+  border-radius: 50%;
+}
+.card-footer-share path {
+  fill: #6e8098;
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 0.5em 1em;
+  }
+  .App .container {
+    position: relative;
+    width: 400px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .container .item-container {
+    height: auto;
+  }
+
+  .container .card-header img {
+    width: 100%;
+    height: 250px;
+
+    object-position: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .App .container {
+    width: 100%;
+  }
+  .container .card-header img {
+    height: 200px;
+  }
 }
