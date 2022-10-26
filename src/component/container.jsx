@@ -25,9 +25,9 @@ const CardHeader = ()=>{
 }
 
 const show =()=>{
-    document.querySelector('.icon-share').classList.toggle('icon-share-active')
+    document.querySelector('.icon-share').classList.toggle('icon-share-active');
     document.querySelector('.btn-footer-share').classList.toggle('btn-footer-share-active')
-    document.querySelector('.share-path').classList.toggle('path-active')
+    document.querySelector('.share-path').classList.toggle('path-active');
 }
 
 // card body container
