@@ -21,6 +21,7 @@
   display: grid;
   place-items: center;
   top: 0;
+  overflow-x: hidden;
   left: 0;
 }
 
@@ -32,7 +33,6 @@
   grid-template-columns: 0.6fr 1fr;
   grid-auto-rows: auto;
   border-radius: 0.8em;
-  overflow: hidden;
   font-family: var(--font);
   background: #fff;
 }
@@ -41,9 +41,12 @@
   position: relative;
   width: 100%;
   height: 250px;
-  overflow: hidden;
 }
-
+.container div#card-header {
+  overflow: hidden;
+  border-top-left-radius: 0.8em;
+  border-bottom-left-radius: 0.8em;
+}
 .container .card-header img {
   width: 100%;
   height: 100%;
@@ -52,10 +55,10 @@
   object-position: center left;
 }
 
-.container .card-body {
-  padding: 2em 2em;
+.container .card-body .head-body {
+  padding: 2em 2em 0;
+  margin-bottom: 1em;
 }
-
 .card-body .title-card-body {
   color: var(--VeryDarkGrayishBlue);
   margin-bottom: 0.7em;
@@ -65,15 +68,17 @@
 
 .card-body .desc-card-body {
   font-size: 0.8em;
-  margin-bottom: 1.2em;
+  /* margin-bottom: 1.2em; */
   color: var(--DesaturatedDarkBlue);
 }
 
 .card-body .card-body-footer {
   width: 100%;
   display: grid;
+  padding: 0 2em;
   grid-template-columns: 0.2fr 1.5fr 0.2fr;
   grid-auto-rows: 35px;
+  position: relative;
 }
 
 .card-body-footer .card-footer-img {
@@ -105,20 +110,58 @@
   font-size: 0.7em;
   font-weight: 700;
 }
-.card-footer-share {
+.btn-footer-share {
   width: 100%;
   height: 100%;
   border: none;
   cursor: pointer;
+  z-index: 2;
   display: grid;
   place-items: center;
   background: var(--LightGrayishBlue);
   border-radius: 50%;
+  transition: 0.3s;
 }
-.card-footer-share path {
+.btn-footer-share .share-path {
   fill: #6e8098;
 }
+.btn-footer-share path.path-active {
+  fill: #fff;
+}
 
+.card-body-footer button.btn-footer-share-active {
+  background: var(--DesaturatedDarkBlue);
+}
+
+.card-body-footer .icon-share {
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 0.3em 1em -5px hsla(0, 0%, 0%, 0.5);
+  right: -3em;
+  top: -4em;
+  width: 220px;
+  border-radius: 0.8em;
+  padding: 0.9em 1em;
+  background: var(--VeryDarkGrayishBlue);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  justify-content: space-around;
+}
+.card-body-footer div.icon-share-active {
+  visibility: visible;
+  opacity: 1;
+}
+.icon-share p {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--DesaturatedDarkBlue);
+  letter-spacing: 5px;
+}
 @media screen and (max-width: 768px) {
   .App {
     padding: 0.5em 1em;
@@ -129,17 +172,38 @@
     height: auto;
     display: grid;
     grid-template-columns: 1fr;
+    overflow: hidden;
     grid-auto-rows: auto;
+  }
+  .card-body .card-body-footer {
+    padding: 0 2em 1em;
   }
   .container .item-container {
     height: auto;
   }
-
+  .container div#card-header {
+    overflow: hidden;
+    border-top-left-radius: 0.8em;
+    border-top-right-radius: 0.8em;
+  }
+  .container .card-body .head-body {
+    margin-bottom: 2.5em;
+  }
   .container .card-header img {
     width: 100%;
     height: 250px;
-
     object-position: center;
+  }
+  .card-body-footer .icon-share {
+    position: absolute;
+    width: 100%;
+    border-radius: 0;
+    height: 70px;
+    justify-content: left;
+    gap: 1.5em;
+    left: 0;
+    padding: 1em 2em;
+    top: -1.2em;
   }
 }
 
@@ -149,5 +213,28 @@
   }
   .container .card-header img {
     height: 200px;
+  }
+  .card-body-footer .icon-share {
+    padding: 1em 1em;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .card-body .card-body-footer {
+    grid-template-columns: 0.5fr 1.4fr 0.3fr;
+  }
+}
+
+@media screen and (max-height: 575px) and (max-width: 768px) {
+  .App {
+    height: auto;
+    padding: 100px 1em;
+  }
+}
+
+@media screen and (max-height: 270px) {
+  .App {
+    height: auto;
+    padding: 100px 1em;
   }
 }
