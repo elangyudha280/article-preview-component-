@@ -23,3 +23,29 @@
   top: 0;
   left: 0;
 }
+
+.App .container {
+  position: relative;
+  width: 680px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  grid-auto-rows: auto;
+  border-radius: 0.8em;
+  overflow: hidden;
+  background: #fff;
+}
+
+.container .item-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.container .card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center left;
+}
