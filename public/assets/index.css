@@ -2,9 +2,9 @@
 
 :root {
   --font: 'Manrope', sans-serif;
-  --VeryDarkGrayishBlue: hsl(217, 19%, 35%) 
-  --DesaturatedDarkBlue: hsl(214, 17%, 51%)
-     --GrayishBlue: hsl(212, 23%, 69%)
+  --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+  --GrayishBlue: hsl(212, 23%, 69%);
   --LightGrayishBlue: hsl(210, 46%, 95%);
 }
 * {
@@ -16,7 +16,10 @@
 .App {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100vh;
+  background: var(--LightGrayishBlue);
+  display: grid;
+  place-items: center;
   top: 0;
   left: 0;
 }
